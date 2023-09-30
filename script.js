@@ -64,7 +64,18 @@ function saveSearch(value) {
   {
         let tempDates = localStorage.getItem("Dates");
         tempDates = JSON.parse(tempDates);
-        tempDates.push(value);
+        let dataPresent = false;
+        tempDates.forEach((val)=>{
+          if(val === value)
+          {
+            dataPresent = true;
+          }
+        });
+
+        if(!dataPresent)
+        {
+          tempDates.push(value);
+        }
         localStorage.setItem("Dates",JSON.stringify(tempDates));
   }
   else{
