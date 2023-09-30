@@ -8,7 +8,7 @@ const apiKey = "neT9QnUQd0DoPvLuS5Lee2c3tht1X9il3UgbmSxB";
 let historyId = 1;
 //Function to fetchData
 async function fetchdata(date) {
-  let url = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}&date=${date}`;
+  let url = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}&date=${date}&thumbs=true`;
 
   await fetch(url, { method: "GET" }).then(async (data) => {
     await data
@@ -29,7 +29,13 @@ async function fetchdata(date) {
 //Function to add data into ui
 function addDataToUI(data) {
   console.log(data);
-  image.src = `${data.url}`;
+  if(data.thumbnail_url)
+  {
+    image.src = `${data.thumbnail_url}`;
+  }
+  else{
+    image.src = `${data.url}`;
+  }
   title.innerText = `${data.title}`;
   desc.innerText = `${data.explanation}`;
 }
