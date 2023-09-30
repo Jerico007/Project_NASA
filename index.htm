@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div id="current-image-container">
+      <h1 class="head">Picture Of The Day</h1>
+      <img
+        src="https://apod.nasa.gov/apod/image/2309/HarvestMoonNest.jpg"
+        id="current-image"
+      />
+      <h3 class="title">Nasa Image</h3>
+      <p class="description">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
+        numquam sunt nam rem minima natus, fuga assumenda ut magni in, quaerat
+        repellat sed reiciendis inventore reprehenderit impedit voluptas sint
+        aliquam. Lorem ipsum dolor sit amet consectetur
+      </p>
+    </div>
+
+    <form id="search-form">
+      <h1>Search for a picture of the Day</h1>
+      <label for="search-input">Select a date: </label>
+      <input type="date" id="search-input" required />
+      <button type="submit" id="search">Search</button>
+    </form>
+
+    <div id="search-history">
+      <h1>Previous Searches</h1>
+      <ul id="searched-values">
+        <!-- <li><a href="#">2023-8-21</a></li> -->
+      </ul>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
